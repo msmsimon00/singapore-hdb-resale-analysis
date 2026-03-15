@@ -1,0 +1,12 @@
+
+pandas
+numpy
+geopandas
+matplotlib
+folium
+branca
+contextily
+shapely
+tqdm
+requests
+jupyter
