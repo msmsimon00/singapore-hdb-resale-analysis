@@ -1,18 +1,18 @@
 # Singapore HDB Resale Market Analysis and Price Prediction
 
-In Singapore, we all know that for the HDB flats, certain areas are more expensive, while other areas are more affordable.
+We all know that for the HDB flats in Singapore, certain areas are more expensive, while other areas are more affordable. For many people, the most important question is: given my budget, what can I afford?
 
-**However, think about these:**
+**However, as smart consumers, we want to get the best value for our money and go on a bargain hunt. For example:**
 
-**-- given my budget, what can I afford? (this is not difficult to find out)**
-
-**-- I would prefer younger flats (fewer maintenance issues)**
+**-- I would prefer newer flats (fewer maintenance issues)**
 
 **-- I want a location that is affordable but also have good price appreciation potential over the long run.**
 
-**-- I want a location that offers a lot of flats to choose from, so that many sellers are chasing a few buyers (buyers have the bargaining power), instead of the other way round.**
+**-- I want a location that I have the bargaining power, e.g. I want the sellers to chase after me, so that I get to pick and choose and negotiate hard.**
 
-**-- I want to find out how much the previous owner paid for his/her flat, so that I know how much room I have for negotiation.**
+**-- I want to find out how much the previous owner paid for his/her flat, so that I know how much room I can negotiate down.**
+
+**-- And then finally, given my budget, what can I afford while also meeting all the conditions above?**
 
 **Interested to find out more? Hopefully this analysis can help!**
 
