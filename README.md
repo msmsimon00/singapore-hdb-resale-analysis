@@ -158,8 +158,7 @@ That is a more nuanced conclusion than simply saying “central locations are ex
 
 The original HTML report contains two interactive maps, extracted here as standalone files so you can open and use them immediately:
 
-- [Open interactive map 1](interactive_maps/trends_interactive_map_1.html)
-- [Open interactive map 2](interactive_maps/trends_interactive_map_2.html)
+- [Open interactive maps](tiny.cc/many/sg-hdb-analysis)
 
 You can also open the full original report directly:
 
