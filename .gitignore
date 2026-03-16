@@ -1,25 +1,42 @@
-
-# Python cache
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+*.pyd
 
 # Jupyter
 .ipynb_checkpoints/
 
-# Environment files
-.env
+# Virtual environments
+.venv/
 venv/
-.env/
+env/
+ENV/
 
-# OS files
+# OS / editor files
 .DS_Store
 Thumbs.db
+.vscode/
+.idea/
 
-# Data folders
-data/raw/
-*.zip
-*.gpkg
-*.geojson
+# Environment files
+.env
+.env.*
+
+# Project data
+ResaleflatpricesbasedonregistrationdatefromJan2017onwards.csv
+
+# Generated cache and outputs
+cache/
+outputs/
+
+# Python packaging / test artifacts
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
 # Logs
 *.log
