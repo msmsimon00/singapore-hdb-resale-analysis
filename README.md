@@ -1,107 +1,154 @@
+# Singapore HDB Resale Analysis
 
-# Singapore HDB Resale Market Analysis
+This repository contains two Jupyter notebooks for analyzing and modeling the Singapore HDB resale market.
 
-This project analyzes the Singapore HDB resale housing market using geospatial analysis and interactive visualization.
+The workflow is:
 
-The notebook explores how resale price per square meter varies across buildings and how MRT/LRT accessibility relates to housing prices. The project combines data cleaning, spatial analysis, and both static and interactive map visualization.
+1. Run `singapore_hdb_resale_trends.ipynb`
+2. Run `singapore_hdb_resale_prediction.ipynb`
 
-## Project Goals
+The first notebook prepares geospatial outputs and geocode cache files that are also used by the second notebook.
 
-- Analyze spatial variation in HDB resale prices
-- Aggregate transaction data to the building level
-- Explore relationships between MRT accessibility and resale prices
-- Produce both static geospatial visualizations and interactive maps
+## Project Overview
 
-## Data Sources
+This project studies Singapore HDB resale transactions from both a **market trends** and a **price prediction** perspective.
 
-Typical sources used in this analysis include:
+### Notebook 1: `singapore_hdb_resale_trends.ipynb`
+This notebook focuses on data cleaning, geocoding, geospatial aggregation, and visualization.
 
-- Singapore HDB resale transaction dataset
-- Building geolocation data
-- MRT/LRT station locations
-- Rail line geospatial data
-- Basemap tiles from CartoDB (via Contextily)
+Main tasks:
+- load the HDB resale transaction CSV
+- clean and transform transaction data
+- geocode unique building addresses using OneMap
+- merge transactions with latitude / longitude
+- aggregate transactions to the building level
+- compute recent median resale price metrics
+- compute 5-year price change metrics
+- download and overlay MRT / LRT station and rail line layers
+- generate static PDF maps
+- generate interactive HTML maps
+- export building-level summary data
 
-## Methods
+Outputs include:
+- `outputs/sg_hdb_psm_map.pdf`
+- `outputs/sg_hdb_psf_map.pdf`
+- `outputs/sg_hdb_5y_change_map.pdf`
+- `outputs/sg_hdb_psm_interactive.html`
+- `outputs/sg_hdb_5y_change_interactive.html`
+- `outputs/building_metrics.csv`
+- `cache/address_geocodes.csv`
 
-Key techniques used in this project:
+### Notebook 2: `singapore_hdb_resale_prediction.ipynb`
+This notebook focuses on feature engineering, model training, evaluation, and model interpretation.
 
-- Data cleaning and transformation using pandas
-- Geospatial operations using GeoPandas
-- Building-level aggregation of resale transactions
-- Quantile clipping for map visualization
-- Static map rendering using matplotlib + geopandas
-- Interactive mapping using folium
-- Integration of MRT rail lines and station data
+Main tasks:
+- load the HDB resale transaction CSV
+- load geocode results from `cache/address_geocodes.csv`
+- create predictive features
+- split data into train / validation / test sets
+- train and compare multiple machine learning models
+- evaluate model performance
+- visualize actual vs predicted prices
+- inspect feature importance and SHAP explanations
+- create geospatial market heatmaps
+- visualize high-dimensional structure with dimension reduction
 
-## Technologies
+Models included:
+- Linear Regression
+- Polynomial Regression
+- Random Forest
+- k-Nearest Neighbors
+- MLP Regressor
+- XGBoost
+- LightGBM
 
-Python libraries used:
+## Data Requirements
 
-- pandas
-- numpy
-- geopandas
-- matplotlib
-- folium
-- branca
-- shapely
-- contextily
+Place the following file in the project root before running the notebooks:
 
-## Repository Structure
+- `ResaleflatpricesbasedonregistrationdatefromJan2017onwards.csv`
 
+The trends notebook will create cache files that the prediction notebook reuses.
+
+## Recommended Run Order
+
+### 1) Create and activate an environment
+```bash
+python -m venv .venv
 ```
-singapore-hdb-resale-analysis/
-│
-├─ singapore_hdb_resale_trends.ipynb
-├─ README.md
-├─ requirements.txt
-├─ .gitignore
-│
-├─ data/
-│   ├─ raw/
-│   └─ processed/
-│
-├─ outputs/
-│   ├─ maps/
-│   └─ figures/
+
+On macOS / Linux:
+```bash
+source .venv/bin/activate
 ```
 
-## How to Run
-
-Install dependencies:
-
+On Windows PowerShell:
+```powershell
+.\.venv\Scripts\Activate.ps1
 ```
+
+### 2) Install dependencies
+```bash
 pip install -r requirements.txt
 ```
 
-Start Jupyter:
-
+### 3) Start Jupyter
+```bash
+jupyter notebook
 ```
-python -m notebook
-```
 
-Then open:
-
-```
+### 4) Run notebooks in this order
+```text
 singapore_hdb_resale_trends.ipynb
+singapore_hdb_resale_prediction.ipynb
 ```
 
-Run all cells to reproduce the analysis.
+## Repository Structure
 
-## Example Outputs
+```text
+.
+├── singapore_hdb_resale_trends.ipynb
+├── singapore_hdb_resale_prediction.ipynb
+├── README.md
+├── requirements.txt
+├── .gitignore
+├── cache/
+│   ├── address_geocodes.csv
+│   └── geocode_batches/
+├── outputs/
+│   ├── *.pdf
+│   ├── *.html
+│   └── building_metrics.csv
+└── ResaleflatpricesbasedonregistrationdatefromJan2017onwards.csv
+```
 
-The project produces:
+## Python Libraries Used
 
-- Building-level price per square meter maps
-- MRT accessibility overlays
-- Interactive folium-based housing market explorer
-- Spatial visualizations of resale price trends
+Core analysis and visualization:
+- pandas
+- numpy
+- matplotlib
+- geopandas
+- shapely
+- contextily
+- folium
+- branca
+- requests
+- tqdm
+
+Modeling and interpretation:
+- scikit-learn
+- xgboost
+- lightgbm
+- shap
+- umap-learn
+
+Notebook environment:
+- jupyter
 
 ## Notes
 
-This repository is intended as a personal data science portfolio project demonstrating:
-
-- data analysis
-- geospatial analytics
-- housing market analysis
-- interactive visualization
+- The raw resale CSV is not included in this repository.
+- Geocoding depends on OneMap availability and may take time on the first run.
+- The trends notebook is designed to save geocode progress in batches so it can be resumed.
+- Some modeling sections may be computationally heavy depending on your machine.
