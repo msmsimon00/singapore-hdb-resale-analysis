@@ -51,6 +51,18 @@ This notebook treats the HDB resale market as a **spatial trend-analysis problem
 6. Overlay MRT/LRT line and station layers
 7. Produce both **static figures** and **interactive maps**
 
+Unless otherwise stated:
+-- "psm": price per square meter in Singapore Dollar (SGD)
+-- "psf": price per square feet in Singapore Dollar (SGD)
+-- "current" or "now": March 2026 (or April 2025 - March 2026)
+-- "base" or "5 years ago": March 2021 (or April 2020 - March 2021)
+-- The psm and psf figures are presented as "median price per building over a 12-month period.
+   This is because:
+   (1) there may not be many transactions in a building each month, so it is more meaningful to look over 12 months.
+   (2) taking a median value will avoid the influence by unusually high or unusually low values.
+   (3) psm and psf already adjust for the area of an apartment (e.g. even in the same building, a 5-Room flat is obviously more expensive than a 3-Room flat), 
+       so we can focus our attention on other factors.
+
 ## Why this method is useful
 
 This approach is stronger than reading raw transaction tables directly because transaction-level records are repetitive and noisy for spatial interpretation. Building-level summaries make it much easier to answer practical questions such as:
@@ -61,14 +73,14 @@ This approach is stronger than reading raw transaction tables directly because t
 
 ## Key summary table from the trends report
 
-### Distribution summary of the mapped metrics
+### Summary of Over Trends Across Singapore
 
-| metric            |   count |     p02 |   median |      p98 |
-|:------------------|--------:|--------:|---------:|---------:|
-| current_psm       |    7949 | 4869.29 |  6263.74 | 10946.2  |
-| current_psf       |    7949 |  452.38 |   581.92 |  1016.94 |
-| pct_change_psm_5y |    6394 |   18.9  |    45.74 |    72.63 |
-| pct_change_psf_5y |    6394 |   18.9  |    45.74 |    72.63 |
+| Parameters         |  No.txn |   Btm 2% |   Median |    Top 2% |
+|:-------------------|--------:|---------:|---------:|----------:|
+| Price/M2  psm Y2026|    7949 |$4,869.29 |$6,263.74 |$10,946.20 |
+| Price/Ft2 psf Y2026|    7949 |  $452.38 |  $581.92 | $1,016.94 |
+| psm growth vs Y2021|    6394 |    18.9% |   45.74% |    72.63% |
+| psf growth vs Y2021|    6394 |    18.9% |   45.74% |    72.63% |
 
 **Interpretation**
 
@@ -76,20 +88,20 @@ This approach is stronger than reading raw transaction tables directly because t
 - Five-year change has a median of about **45.7%**, which indicates a very strong broad market upswing over the analysis window.
 - The wide spread between the 2nd and 98th percentiles confirms that both current prices and growth are highly uneven across space.
 
-## Highest current price buildings
+## Most Expensive Buildings in Y2026
 
-|   postal | address           | town         |   current_psm |   current_psf |   recent_txn_count |
+|   Postal | Address           | Town         |     psm Y2026 |     psf Y2026 | No.txn last 12 mth |
 |---------:|:------------------|:-------------|--------------:|--------------:|-------------------:|
-|    85201 | 1B CANTONMENT RD  | CENTRAL AREA |       14947.4 |       1388.66 |                  5 |
-|    85401 | 1D CANTONMENT RD  | CENTRAL AREA |       14939.9 |       1387.96 |                  6 |
-|    85301 | 1C CANTONMENT RD  | CENTRAL AREA |       14759.2 |       1371.18 |                 12 |
-|    85101 | 1A CANTONMENT RD  | CENTRAL AREA |       14717   |       1367.25 |                  7 |
-|    85701 | 1G CANTONMENT RD  | CENTRAL AREA |       14586.9 |       1355.17 |                  8 |
-|    85601 | 1F CANTONMENT RD  | CENTRAL AREA |       14177.5 |       1317.13 |                  4 |
-|    85501 | 1E CANTONMENT RD  | CENTRAL AREA |       14108.8 |       1310.75 |                  6 |
-|   164010 | 10B BOON TIONG RD | BUKIT MERAH  |       13678.2 |       1270.74 |                 10 |
-|   162009 | 9A BOON TIONG RD  | BUKIT MERAH  |       13642.9 |       1267.46 |                  5 |
-|   141095 | 95 DAWSON RD      | QUEENSTOWN   |       13539.7 |       1257.88 |                  6 |
+|    85201 | 1B CANTONMENT RD  | CENTRAL AREA |     $14,947.4 |     $1,388.66 |                  5 |
+|    85401 | 1D CANTONMENT RD  | CENTRAL AREA |     $14,939.9 |     $1,387.96 |                  6 |
+|    85301 | 1C CANTONMENT RD  | CENTRAL AREA |     $14,759.2 |     $1,371.18 |                 12 |
+|    85101 | 1A CANTONMENT RD  | CENTRAL AREA |     $14,717.0 |     $1,367.25 |                  7 |
+|    85701 | 1G CANTONMENT RD  | CENTRAL AREA |     $14,586.9 |     $1,355.17 |                  8 |
+|    85601 | 1F CANTONMENT RD  | CENTRAL AREA |     $14,177.5 |     $1,317.13 |                  4 |
+|    85501 | 1E CANTONMENT RD  | CENTRAL AREA |     $14,108.8 |     $1,310.75 |                  6 |
+|   164010 | 10B BOON TIONG RD | BUKIT MERAH  |     $13,678.2 |     $1,270.74 |                 10 |
+|   162009 | 9A BOON TIONG RD  | BUKIT MERAH  |     $13,642.9 |     $1,267.46 |                  5 |
+|   141095 | 95 DAWSON RD      | QUEENSTOWN   |     $13,539.7 |     $1,257.88 |                  6 |
 
 **Interpretation**
 
@@ -97,20 +109,20 @@ This approach is stronger than reading raw transaction tables directly because t
 - This is consistent with a mature-estate and central-access premium.
 - These are not isolated one-off sales: the recent transaction counts show that the premium is supported by multiple recent observations.
 
-## Fastest five-year growth buildings
+## Fastest Five-year Growth Buildings
 
-|   postal | address                 | town          |   pct_change_psm_5y |   current_psm |   base_psm |
+|   Postal | Address                 | Town          | psm growth vs Y2021 |     psm Y2026 |  psm Y2021 |
 |---------:|:------------------------|:--------------|--------------------:|--------------:|-----------:|
-|   560605 | 605 ANG MO KIO AVE 5    | ANG MO KIO    |              112.61 |       7584.27 |    3567.16 |
-|   730129 | 129 MARSILING RISE      | WOODLANDS     |              103.86 |       6500    |    3188.41 |
-|   730522 | 522 WOODLANDS DR 14     | WOODLANDS     |               95.56 |       5719.08 |    2924.53 |
-|   530937 | 937 HOUGANG ST 92       | HOUGANG       |               95.4  |       6829.27 |    3495.05 |
-|   760269 | 269 YISHUN ST 22        | YISHUN        |               94.27 |       6687.5  |    3442.31 |
-|   350103 | 103 POTONG PASIR AVE 1  | TOA PAYOH     |               92.82 |       7972.97 |    4134.83 |
-|   760880 | 880 YISHUN ST 81        | YISHUN        |               92.45 |       5791.93 |    3009.62 |
-|   680421 | 421 CHOA CHU KANG AVE 4 | CHOA CHU KANG |               91.63 |       5527.77 |    2884.62 |
-|   750314 | 314 SEMBAWANG DR        | SEMBAWANG     |               91.07 |       5944.44 |    3111.11 |
-|   542264 | 264B COMPASSVALE BOW    | SENGKANG      |               90.87 |       8226.09 |    4309.78 |
+|   560605 | 605 ANG MO KIO AVE 5    | ANG MO KIO    |             112.61% |     $7,584.27 |    3567.16 |
+|   730129 | 129 MARSILING RISE      | WOODLANDS     |             103.86% |     $6,500.00 |    3188.41 |
+|   730522 | 522 WOODLANDS DR 14     | WOODLANDS     |              95.56% |     $5,719.08 |    2924.53 |
+|   530937 | 937 HOUGANG ST 92       | HOUGANG       |              95.40% |     $6,829.27 |    3495.05 |
+|   760269 | 269 YISHUN ST 22        | YISHUN        |              94.27% |     $6,687.50 |    3442.31 |
+|   350103 | 103 POTONG PASIR AVE 1  | TOA PAYOH     |              92.82% |     $7,972.97 |    4134.83 |
+|   760880 | 880 YISHUN ST 81        | YISHUN        |              92.45% |     $5,791.93 |    3009.62 |
+|   680421 | 421 CHOA CHU KANG AVE 4 | CHOA CHU KANG |              91.63% |     $5,527.77 |    2884.62 |
+|   750314 | 314 SEMBAWANG DR        | SEMBAWANG     |              91.07% |     $5,944.44 |    3111.11 |
+|   542264 | 264B COMPASSVALE BOW    | SENGKANG      |              90.87% |     $8,226.09 |    4309.78 |
 
 **Interpretation**
 
