@@ -156,20 +156,20 @@ This approach is stronger than reading raw transaction tables directly because t
 
 ## Figures from the trends report
 
-### 1. Median PSM (price per square meter) per Building in Y2026
+### 1. PSM (price per square meter) per Building in Y2026
 ![Median PSM (price per square meter) in Y2026](assets/trends_0.png)
 
-*Median price per square meter by building (last 12 months). Highest values cluster in central, mature estates and along well-connected transit corridors.*
+*Median price per square meter by building (last 12 months). Red is more expensive than yellow, and yellow is more expensive than blue. Highest values cluster in central, mature estates and along well-connected transit corridors.*
 
-### 2. Median PSF (price per square foot) per Building in Y2026
+### 2. PSF (price per square foot) per Building in Y2026
 ![Median PSF (price per square foot) in Y2026](assets/trends_1.png)
 
-*Median price per square foot by building (last 12 months). The same premium geography appears when prices are measured in psf rather than psm.*
+*Median price per square foot by building (last 12 months). Red is more expensive than yellow, and yellow is more expensive than blue. The same premium geography appears when prices are measured in psf rather than psm.*
 
-### 3. 5 Year % Growth in Median PSF (Y2026 vs Y2021)
+### 3. 5 Year % Growth in PSF (Y2026 vs Y2021)
 ![Five-year percentage change in median price per square meter](assets/trends_2.png)
 
-*Five-year percentage change in median price per square meter by building. Strong appreciation is visible beyond the most expensive core, indicating broad-based market growth with standout growth pockets.*
+*Five-year percentage change in median price per square meter by building. Red is growing faster than yellow, and yellow is growing faster than blue. Strong appreciation is visible beyond the most expensive core, indicating broad-based market growth with standout growth pockets.*
 
 ## Main results and conclusions from `resale_trends`
 
