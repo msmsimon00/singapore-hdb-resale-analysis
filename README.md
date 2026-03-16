@@ -73,7 +73,7 @@ This notebook treats the HDB resale market as a **spatial trend-analysis problem
 
 -- "psf": price per square feet in Singapore Dollar (SGD)
 
--- "current" or "now": March 2026 (or April 2025 - March 2026)
+-- "current" or "now": **March 2026 (or April 2025 - March 2026)**
 
 -- "base" or "5 years ago": March 2021 (or April 2020 - March 2021)
 
@@ -97,7 +97,7 @@ This approach is stronger than reading raw transaction tables directly because t
 
 ## Key summary table from the trends report
 
-### Summary of Over Trends Across Singapore
+### Summary of Overall Trends Across Singapore
 
 | Parameters         |  No.txn |   Btm 2% |   Median |    Top 2% |
 |:-------------------|--------:|---------:|---------:|----------:|
@@ -156,17 +156,17 @@ This approach is stronger than reading raw transaction tables directly because t
 
 ## Figures from the trends report
 
-### 1. Current median price per square meter
-![Current median price per square meter](assets/trends_0.png)
+### 1. Median PSM (price per square meter) per Building in Y2026
+![Median PSM (price per square meter) in Y2026](assets/trends_0.png)
 
-*Current median price per square meter by building (last 12 months). Highest values cluster in central, mature estates and along well-connected transit corridors.*
+*Median price per square meter by building (last 12 months). Highest values cluster in central, mature estates and along well-connected transit corridors.*
 
-### 2. Current median price per square foot
-![Current median price per square foot](assets/trends_1.png)
+### 2. Median PSF (price per square foot) per Building in Y2026
+![Median PSF (price per square foot) in Y2026](assets/trends_1.png)
 
-*Current median price per square foot by building (last 12 months). The same premium geography appears when prices are measured in psf rather than psm.*
+*Median price per square foot by building (last 12 months). The same premium geography appears when prices are measured in psf rather than psm.*
 
-### 3. Five-year percentage change in median price per square meter
+### 3. 5 Year % Growth in Median PSF (Y2026 vs Y2021)
 ![Five-year percentage change in median price per square meter](assets/trends_2.png)
 
 *Five-year percentage change in median price per square meter by building. Strong appreciation is visible beyond the most expensive core, indicating broad-based market growth with standout growth pockets.*
@@ -177,7 +177,7 @@ This approach is stronger than reading raw transaction tables directly because t
 The highest current price bands cluster around central Singapore and well-established estates. This implies that proximity to economic centers, amenities, and longstanding urban desirability still anchor the top of the market.
 
 ### Result 2: the strongest growth is broader than the premium core
-The five-year growth map shows that appreciation is not confined to the most expensive locations. This matters because it separates **"where value is already highest"** from **"where momentum is strongest."**
+The five-year growth map shows that appreciation is not confined to the most expensive locations. This matters because it separates **"where value is already highest"** from **"where momentum is strongest."** In fact, areas such as Woodlands, Yishun, Sengkang, and Punggol have seen very strong price appreciation.
 
 ### Result 3: rail accessibility provides strong spatial context
 Overlaying MRT/LRT lines and stations helps explain why some corridors support stronger price levels and resilience. The notebook does not claim that MRT proximity is the only causal factor, but the visual alignment is economically plausible and analytically helpful.
@@ -188,7 +188,7 @@ The resale market appears to have **two simultaneous layers**:
 - a **structural premium layer** driven by centrality, maturity, and transit access
 - a **growth layer** where selected outer/mid-market neighborhoods are catching up faster
 
-That is a more nuanced conclusion than simply saying “central locations are expensive.”
+That is a more nuanced conclusion than simply saying “central locations are expensive.” **An intelligent buyer should look at areas that combine affordability (yellow and blue areas in Figure 1 and Figure 2) with good price appreciation potential (yellow and red areas in Figure 3).**
 
 ## Interactive maps from the trends report
 
