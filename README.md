@@ -1,5 +1,21 @@
 # Singapore HDB Resale Market Analysis and Price Prediction
 
+In Singapore, we all know that for the HDB flats, certain areas are more expensive, while other areas are more affordable.
+
+**However, think about these:**
+
+**-- given my budget, what can I afford? (this is not difficult to find out)**
+
+**-- I would prefer younger flats (fewer maintenance issues)**
+
+**-- I want a location that is affordable but also have good price appreciation potential over the long run.**
+
+**-- I want a location that offers a lot of flats to choose from, so that many sellers are chasing a few buyers (buyers have the bargaining power), instead of the other way round.**
+
+**-- I want to find out how much the previous owner paid for his/her flat, so that I know how much room I have for negotiation.**
+
+**Interested to find out more? Hopefully this analysis can help!**
+
 This portfolio report consolidates the outputs from the two HTML analysis reports:
 
 1. **`singapore_hdb_resale_trends.html`** — geospatial market trend analysis  
@@ -51,17 +67,25 @@ This notebook treats the HDB resale market as a **spatial trend-analysis problem
 6. Overlay MRT/LRT line and station layers
 7. Produce both **static figures** and **interactive maps**
 
-Unless otherwise stated:
+#### Unless otherwise stated:
+
 -- "psm": price per square meter in Singapore Dollar (SGD)
+
 -- "psf": price per square feet in Singapore Dollar (SGD)
+
 -- "current" or "now": March 2026 (or April 2025 - March 2026)
+
 -- "base" or "5 years ago": March 2021 (or April 2020 - March 2021)
+
 -- The psm and psf figures are presented as "median price per building over a 12-month period.
+
    This is because:
+   
    (1) there may not be many transactions in a building each month, so it is more meaningful to look over 12 months.
+   
    (2) taking a median value will avoid the influence by unusually high or unusually low values.
-   (3) psm and psf already adjust for the area of an apartment (e.g. even in the same building, a 5-Room flat is obviously more expensive than a 3-Room flat), 
-       so we can focus our attention on other factors.
+   
+   (3) psm and psf already adjust for the area of an apartment (e.g. even in the same building, a 5-Room flat is obviously more expensive than a 3-Room flat), so we can focus our attention on other factors.
 
 ## Why this method is useful
 
@@ -113,16 +137,16 @@ This approach is stronger than reading raw transaction tables directly because t
 
 |   Postal | Address                 | Town          | psm growth vs Y2021 |     psm Y2026 |  psm Y2021 |
 |---------:|:------------------------|:--------------|--------------------:|--------------:|-----------:|
-|   560605 | 605 ANG MO KIO AVE 5    | ANG MO KIO    |             112.61% |     $7,584.27 |    3567.16 |
-|   730129 | 129 MARSILING RISE      | WOODLANDS     |             103.86% |     $6,500.00 |    3188.41 |
-|   730522 | 522 WOODLANDS DR 14     | WOODLANDS     |              95.56% |     $5,719.08 |    2924.53 |
-|   530937 | 937 HOUGANG ST 92       | HOUGANG       |              95.40% |     $6,829.27 |    3495.05 |
-|   760269 | 269 YISHUN ST 22        | YISHUN        |              94.27% |     $6,687.50 |    3442.31 |
-|   350103 | 103 POTONG PASIR AVE 1  | TOA PAYOH     |              92.82% |     $7,972.97 |    4134.83 |
-|   760880 | 880 YISHUN ST 81        | YISHUN        |              92.45% |     $5,791.93 |    3009.62 |
-|   680421 | 421 CHOA CHU KANG AVE 4 | CHOA CHU KANG |              91.63% |     $5,527.77 |    2884.62 |
-|   750314 | 314 SEMBAWANG DR        | SEMBAWANG     |              91.07% |     $5,944.44 |    3111.11 |
-|   542264 | 264B COMPASSVALE BOW    | SENGKANG      |              90.87% |     $8,226.09 |    4309.78 |
+|   560605 | 605 ANG MO KIO AVE 5    | ANG MO KIO    |             112.61% |     $7,584.27 |  $3,567.16 |
+|   730129 | 129 MARSILING RISE      | WOODLANDS     |             103.86% |     $6,500.00 |  $3,188.41 |
+|   730522 | 522 WOODLANDS DR 14     | WOODLANDS     |              95.56% |     $5,719.08 |  $2,924.53 |
+|   530937 | 937 HOUGANG ST 92       | HOUGANG       |              95.40% |     $6,829.27 |  $3,495.05 |
+|   760269 | 269 YISHUN ST 22        | YISHUN        |              94.27% |     $6,687.50 |  $3,442.31 |
+|   350103 | 103 POTONG PASIR AVE 1  | TOA PAYOH     |              92.82% |     $7,972.97 |  $4,134.83 |
+|   760880 | 880 YISHUN ST 81        | YISHUN        |              92.45% |     $5,791.93 |  $3,009.62 |
+|   680421 | 421 CHOA CHU KANG AVE 4 | CHOA CHU KANG |              91.63% |     $5,527.77 |  $2,884.62 |
+|   750314 | 314 SEMBAWANG DR        | SEMBAWANG     |              91.07% |     $5,944.44 |  $3,111.11 |
+|   542264 | 264B COMPASSVALE BOW    | SENGKANG      |              90.87% |     $8,226.09 |  $4,309.78 |
 
 **Interpretation**
 
