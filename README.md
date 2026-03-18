@@ -29,7 +29,7 @@ The order matters. The first report builds the geospatial understanding of the H
   - [Interactive map: latest median price per sqm by building](outputs/sg_hdb_psm_interactive.html)
   - [Interactive map: 5-year % change in median price per sqm by building](outputs/sg_hdb_5y_change_interactive.html)
 - The original exported notebook reports are also included:
-  - [Full trends HTML report](singapore_hdb_resale_trends.html)
+  - [Full trends HTML report](singapore_hdb_resale_visualization.html)
   - [Full prediction HTML report](singapore_hdb_resale_prediction.html)
 
 ---
