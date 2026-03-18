@@ -1,0 +1,16 @@
+pandas
+numpy
+matplotlib
+geopandas
+shapely
+contextily
+folium
+branca
+requests
+tqdm
+scikit-learn
+xgboost
+lightgbm
+shap
+umap-learn
+jupyter
