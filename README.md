@@ -14,8 +14,11 @@ Interested to find out more? Hopefully this analysis can help!
 
 This repository-style report summarizes **two completed analysis outputs**:
 
-1. **Part 1 — `resale_visualization` / `singapore_hdb_resale_trends.html`**
-2. **Part 2 — `resale_prediction` / `singapore_hdb_resale_prediction.html`**
+1. **Part 1 — `singapore_hdb_resale_trends.html`**
+2. **Part 2 — `singapore_hdb_resale_prediction.html`**
+
+Try the interactive maps now:
+[Interactive Maps (Open New Window)](https://tiny.cc/many/sg-hdb-analysis)
 
 The order matters. The first report builds the geospatial understanding of the HDB resale market, while the second report uses that structure to test whether resale prices can be predicted accurately enough to support a practical selling-price estimate.
 
@@ -23,12 +26,12 @@ The order matters. The first report builds the geospatial understanding of the H
 
 - Read **Part 1** first to understand market structure, spatial clustering, and recent appreciation patterns.
 - Then read **Part 2** to see how those patterns are converted into features for machine learning.
-- At the end of Part 1, open the two interactive maps:
-  - [Interactive map: latest median price per sqm by building](maps/resale_trends_current_price_map.html)
-  - [Interactive map: 5-year % change in median price per sqm by building](maps/resale_trends_5y_change_map.html)
+- At the end of Part 1, open the two interactive maps: 
+  - [Interactive map: latest median price per sqm by building](outputs/sg_hdb_psm_interactive.html)
+  - [Interactive map: 5-year % change in median price per sqm by building](outputs/sg_hdb_5y_change_interactive.html)
 - The original exported notebook reports are also included:
-  - [Full trends HTML report](source_reports/singapore_hdb_resale_trends.html)
-  - [Full prediction HTML report](source_reports/singapore_hdb_resale_prediction.html)
+  - [Full trends HTML report](singapore_hdb_resale_trends.html)
+  - [Full prediction HTML report](singapore_hdb_resale_prediction.html)
 
 ---
 
@@ -177,10 +180,10 @@ The rail overlay makes the market structure easier to explain. It does not prove
 These are the most useful end-user assets from the visualization notebook.
 
 ### Latest median price per sqm by building
-Open here: [resale_trends_current_price_map.html](maps/resale_trends_current_price_map.html)
+Open here: [resale_trends_current_price_map.html](outputs/sg_hdb_psm_interactive.html)
 
 ### 5-year percentage change in median price per sqm by building
-Open here: [resale_trends_5y_change_map.html](maps/resale_trends_5y_change_map.html)
+Open here: [resale_trends_5y_change_map.html](outputs/sg_hdb_5y_change_interactive.html)
 
 These maps let the reader:
 - zoom into specific estates,
