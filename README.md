@@ -14,6 +14,9 @@ But a smart buyer usually wants more than just â€œthe cheapest flat available.â€
 
 This project is designed to answer those questions in a practical, data-driven way.
 
+You can try out right now:  
+- [Interactive Map (open new window)](https://tiny.cc/many/sg-hdb-analysis)
+
 ---
 
 ## What is included in this report
