@@ -14,9 +14,6 @@ But a smart buyer usually wants more than just “the cheapest flat available.�
 
 This project is designed to answer those questions in a practical, data-driven way.
 
-You can try out right now:  
-- [Interactive Map (open new window)](https://tiny.cc/many/sg-hdb-analysis)
-
 ---
 
 ## What is included in this report
@@ -30,7 +27,7 @@ The goal is not just to display charts, but to tell a useful buyer-side story:
 
 - where prices are high,
 - where prices are rising,
-- where trading activity is deep or thin,
+- where transaction activity is deep or thin,
 - what kinds of structural trade-offs exist,
 - and which modeling approach best predicts resale prices.
 
@@ -42,10 +39,15 @@ This markdown file is meant to be directly usable. All static figures used in th
 
 For the **interactive maps**, open the HTML file below and scroll to section **“6B) Generate interactive maps”**:
 
+You can try out right now:  
+- [Interactive Map (open new window)](https://tiny.cc/many/sg-hdb-analysis)
+
+The following files need to be downloaded:  
 - [Open the visualization notebook with the two interactive maps](./singapore_hdb_resale_visualization.html)
 - [Open the prediction notebook HTML](./singapore_hdb_resale_prediction.html)
 
 These HTML files are included in the same package so the reader can zoom, pan, and hover over buildings directly.
+
 
 ---
 
