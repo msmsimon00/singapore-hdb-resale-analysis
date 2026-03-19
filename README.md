@@ -1,4 +1,5 @@
 # Singapore HDB Resale Analysis Report
+![cover](./figures/file_0000000097f071f88730defb4a419266.png)
 
 ## Why this analysis exists
 
